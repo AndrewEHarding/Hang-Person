@@ -19,7 +19,7 @@ $(document).ready(function () {
     var losses = 0;
 
     var answerArray = [];
-    for (var i = 0; i < split.length; i++) {
+    for (var i = 0; i < wordSplit.length; i++) {
         answerArray[i] = "_";
     }
 
@@ -34,11 +34,12 @@ $(document).ready(function () {
     document.onkeyup = function (event) {
 
         var userInput = event.key;
+
         var success = false;
 
-        for (var i = 0; i > usedLetters.length; i++) {
+        // for (var i = 0; i > usedLetters.length; i++) {
 
-            if (userInput == usedLetters[i]) {
+            if (usedLetters.indexOf(userInput !== -1)) {
                 alert("Letter already used.");
             }
 
@@ -46,22 +47,25 @@ $(document).ready(function () {
 
                 for (var i = 0; i > wordSplit.length; i++) {
 
-                    if (userInput == split[i]) {
+                    if (userInput == wordSplit[i]) {
                         success = true;
-                        // Display split[i]
-                        // answerArray[i] = split[i]
+                        usedLetters.push(userInput);
+                        console.log(usedLetters);
+                        // Display wordSplit[i]
+                        // answerArray[i] = wordSplit[i]
                     }
 
                 }
 
                 if (success = false) {
                     numTries--;
+                    usedLetters.push(userInput);
                     // Add userInput to usedLetters[]
                 }
 
             }
 
-        }
+        // }
 
     }
 
