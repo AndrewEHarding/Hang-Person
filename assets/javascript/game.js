@@ -8,9 +8,9 @@ var numTries = 6;
 var triesRemain = 0;
 var wins = 0;
 var losses = 0;
-// var gameStart = false;
 var gameOver = false;
 
+// ======Key Press Function=====
 document.onkeyup = function (event) {
 
     if (gameOver) {
@@ -22,16 +22,19 @@ document.onkeyup = function (event) {
         if (event.keyCode >= 65 && event.keyCode <= 90) {
             userGuess(event.key.toLowerCase());
         }
+
+        else {
+            alert("Not a valid guess.")
+        }
     }
 
 };
 
+// =====User Input=====`
 function userGuess(letter) {
 
     if (triesRemain > 0) {
-        // if (!gameStart) {
-        //     gameStart = true;
-        // }
+        
         if (usedLetters.indexOf(letter) === -1) {
             usedLetters.push(letter);
             checkInput(letter);
@@ -44,6 +47,7 @@ function userGuess(letter) {
 
 };
 
+// =====Check Input=====
 function checkInput(letter) {
 
     var position = [];
@@ -66,6 +70,7 @@ function checkInput(letter) {
 
 };
 
+// =====Check Win=====
 function checkWin() {
     if (correctLetters.indexOf("_") === -1) {
         document.getElementById("win-img").style.cssText = "display: block";
@@ -74,12 +79,12 @@ function checkWin() {
     }
 };
 
+// =====New Game Function=====
 function newGame() {
 
     usedLetters = [];
     correctLetters = [];
-    triesRemain = maxTries;
-    // gameStart = false;
+    triesRemain = numTries;
     chosenWord = Math.floor(Math.random() * (wordArray.length));
     document.getElementById("win-img").style.cssText = "display: none";
     document.getElementById("lose-img").style.cssText = "display: none";
@@ -90,6 +95,7 @@ function newGame() {
 
 };
 
+// =====Screen Reset Function=====
 function resetScreen() {
 
     document.getElementById("wins").innerText = wins;
@@ -109,57 +115,3 @@ function resetScreen() {
     }
 
 };
-
-
-
-
-
-
-// for (var i = 0; i < wordSplit.length; i++) {
-//     answerArray[i] = "_";
-// }
-
-// var wordSplit = chosenWord.split("");
-
-// var answerArray = [];
-
-// Display answerArray[] in #answer
-// Display numTries[] in #num-tries
-// Display usedLetters[] in #used-letters
-// Display wins in #wins
-// Display losses in #losses
-
-//Needs on win/loss event
-
-// document.onkeyup = function (event) {
-
-//     var userInput = event.key;
-
-//     var success = false;
-
-//     if (usedLetters.indexOf(userInput !== -1)) {
-//         alert("Letter already used.");
-//     }
-
-//     else {
-
-//         for (var i = 0; i > wordSplit.length; i++) {
-
-//             if (userInput == wordSplit[i]) {
-//                 success = true;
-//                 usedLetters.push(userInput);
-//                 console.log(usedLetters);
-//                 // Display wordSplit[i]
-//                 // answerArray[i] = wordSplit[i]
-//             }
-
-//         }
-
-//         if (success = false) {
-//             numTries--;
-//             usedLetters.push(userInput);
-//         }
-
-//     }
-
-// }
