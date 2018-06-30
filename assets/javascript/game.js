@@ -1,4 +1,4 @@
-
+// That deaf, dumb, and blind kid sure plays a mean pinball!
 
 var wordArray = ["example", "test", "awesome"];
 var chosenWord;
