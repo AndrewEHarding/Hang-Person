@@ -1,6 +1,6 @@
 // That deaf, dumb, and blind kid sure plays a mean pinball!
 
-var wordArray = ["example", "test", "awesome"];
+var wordArray = ["doge", "nyancat", "datboi", "lolcat", "leeroyjenkins", "gangnamstyle"];
 var chosenWord;
 var usedLetters = [];
 var correctLetters = [];
@@ -24,13 +24,13 @@ document.onkeyup = function (event) {
         }
 
         else {
-            alert("Not a valid guess.")
+            alert("Try again, n00b")
         }
     }
 
 };
 
-// =====User Input=====`
+// =====User Input=====
 function userGuess(letter) {
 
     if (triesRemain > 0) {
@@ -58,13 +58,13 @@ function checkInput(letter) {
         }
     }
 
-    if (positions.length <= 0) {
-        remainingGuesses--;
+    if (position.length <= 0) {
+        triesRemain--;
     }
 
     else {
-        for (var i = 0; i < positions.length; i++) {
-            correctLetters[positions[i]] = letter;
+        for (var i = 0; i < position.length; i++) {
+            correctLetters[position[i]] = letter;
         }
     }
 
@@ -73,7 +73,7 @@ function checkInput(letter) {
 // =====Check Win=====
 function checkWin() {
     if (correctLetters.indexOf("_") === -1) {
-        document.getElementById("win-img").style.cssText = "display: block";
+        document.getElementById("win-img").style.cssText = "display: block; margin: auto; height: 250px;";
         wins++;
         gameOver = true;
     }
@@ -82,10 +82,10 @@ function checkWin() {
 // =====New Game Function=====
 function newGame() {
 
+    chosenWord = Math.floor(Math.random() * (wordArray.length));
     usedLetters = [];
     correctLetters = [];
     triesRemain = numTries;
-    chosenWord = Math.floor(Math.random() * (wordArray.length));
     document.getElementById("win-img").style.cssText = "display: none";
     document.getElementById("lose-img").style.cssText = "display: none";
 
@@ -111,7 +111,7 @@ function resetScreen() {
 
     if (triesRemain <= 0) {
         gameOver = true;
-        document.getElementById("lose-img").style.cssText = "display: block";
+        document.getElementById("lose-img").style.cssText = "display: block; margin: auto; height: 250px;";
     }
 
 };

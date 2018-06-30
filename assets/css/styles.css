@@ -1,4 +1,33 @@
-.container {
-    text-align: center;
+body {
+    background-image: url(../images/background-img.gif);
+}
 
+.container {
+    margin: 20px;
+    text-align: center;
+    font-family: 'Shrikhand', cursive;
+}
+
+.mycolumn {
+    padding: 30px;
+    border-style: dotted;
+    border-width: 5px;
+    border-color: limegreen;
+    background-color: rgba(255, 255, 255, 0.800);
+    height: 500px;
+    font-family: 'Anton', sans-serif;
+    font-size: 16pt;
+    color: #ffffff;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: auto;
+    margin-top: 10px;
+}
+
+li {
+    font-family: 'Press Start 2P', cursive;
+}
+
+.title {
+    text-shadow: 2px 2px 4px #ffffff;
 }

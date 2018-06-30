@@ -2,11 +2,12 @@
 <html lang="en">
 
 <head>
-    <title>Hang Person</title>
+    <title>Meme Hang Person</title>
     <meta charset="utf-8">
 
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/reset.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/styles.css" />
+    <link href="https://fonts.googleapis.com/css?family=Anton|Press+Start+2P|Shrikhand" rel="stylesheet" />
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
         crossorigin="anonymous">
     <script src="./assets/javascript/game.js"></script>
@@ -17,46 +18,43 @@
 
     <div class="container">
         <!-- Header -->
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1>Hang Person:</h1>
-                    <h2>The Game</h2>
-                </div>
+        <div class="row">
+            <div class="col-md-12 title">
+                <h1>Meme Hang Person:</h1>
+                <h2>The Game</h2>
+                <h6>you lost the game, lol</h6>
             </div>
         </div>
 
         <!-- Body -->
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-5 mycolumn">
                 <!-- Game Container -->
-                <h3>Press any key to get started!</h3>
-                <div id="answer"></div>
-                <h3>Tries Remeaining:</h3>
+                <h4>Press any key to get started!</h4>
+                <h3 id="answer"></h3>
+                <h4>Tries Remeaining:</h4>
                 <h3 id="num-tries"></h3>
-                <h3>Letters Guessed:</h3>
+                <h4>Letters Guessed:</h4>
                 <h3 id="used-letters"></h3>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-5 mycolumn">
                 <!-- Score Container -->
                 <ul>
                     <li>Wins:
-                        <h3 id="wins"></dh3iv>
+                        <h3 id="wins"></h3>
                     </li>
                     <li>Losses:
                         <h3 id="losses"></h3>
                     </li>
                 </ul>
                 <!-- Win / Loose Images -->
-                <img id="win-img" src="./assets/images/win-img.jpg"/>
-                <img id="lose-img" src="./assets/images/lose-img.jpg"/>
+                <img id="win-img" src="./assets/images/win-img.jpg" />
+                <img id="lose-img" src="./assets/images/lose-img.jpg" />
             </div>
 
         </div>
-
     </div>
-
 </body>
 
 <script>
