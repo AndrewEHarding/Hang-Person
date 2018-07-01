@@ -3,12 +3,13 @@ body {
 }
 
 .container {
-    margin: 20px;
+    margin: auto;
     text-align: center;
     font-family: 'Shrikhand', cursive;
 }
 
 .mycolumn {
+    border-radius: 6px;
     padding: 30px;
     border-style: dotted;
     border-width: 5px;
