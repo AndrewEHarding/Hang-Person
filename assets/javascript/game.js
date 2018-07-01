@@ -76,6 +76,7 @@ function checkWin() {
         gameOver = true;
         // resetScreen();
         document.getElementById("wins").innerText = wins;
+        document.getElementById("memeimage").src = "./assets/images/imgarray-" + chosenWord + ".jpg";
 
     }
 };
@@ -96,6 +97,7 @@ function newGame() {
     document.getElementById("answer").innerText = correctLetters.join("");
     document.getElementById("num-tries").innerText = triesRemain;
     document.getElementById("used-letters").innerText = "";
+    document.getElementById("memeimage").src = "";
 };
 
 // =====Screen Reset Function=====
