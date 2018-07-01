@@ -34,12 +34,11 @@ document.onkeyup = function (event) {
 function userGuess(letter) {
 
     if (triesRemain > 0) {
-        
+
         if (usedLetters.indexOf(letter) === -1) {
             usedLetters.push(letter);
             checkInput(letter);
         }
-
     }
 
     resetScreen();
@@ -67,7 +66,6 @@ function checkInput(letter) {
             correctLetters[position[i]] = letter;
         }
     }
-
 };
 
 // =====Check Win=====
@@ -76,12 +74,14 @@ function checkWin() {
         document.getElementById("win-img").style.cssText = "display: block; margin: auto; height: 250px;";
         wins++;
         gameOver = true;
+        // resetScreen();
+        document.getElementById("wins").innerText = wins;
+
     }
 };
 
 // =====New Game Function=====
 function newGame() {
-
     chosenWord = Math.floor(Math.random() * (wordArray.length));
     usedLetters = [];
     correctLetters = [];
@@ -93,17 +93,17 @@ function newGame() {
         correctLetters.push("_");
     }
 
+    document.getElementById("answer").innerText = correctLetters.join("");
+    document.getElementById("num-tries").innerText = triesRemain;
+    document.getElementById("used-letters").innerText = "";
 };
 
 // =====Screen Reset Function=====
 function resetScreen() {
-
-    document.getElementById("wins").innerText = wins;
-    document.getElementById("losses").innerText = losses;
     document.getElementById("answer").innerText = "";
 
     for (i = 0; i < correctLetters.length; i++) {
-        document.getElementById("answer").innerText = + correctLetters[i];
+        document.getElementById("answer").innerText += correctLetters[i];
     }
 
     document.getElementById("num-tries").innerText = triesRemain;
@@ -112,6 +112,10 @@ function resetScreen() {
     if (triesRemain <= 0) {
         gameOver = true;
         document.getElementById("lose-img").style.cssText = "display: block; margin: auto; height: 250px;";
+        losses++;
     }
+
+    document.getElementById("wins").innerText = wins;
+    document.getElementById("losses").innerText = losses;
 
 };
