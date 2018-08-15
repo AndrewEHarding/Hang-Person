@@ -1,6 +1,8 @@
 # Hang-Person
 ## My Hang-Person/Word-Guess game made in JavaScript
 
+[Live Link](https://andreweharding.github.io/Meme-Hang-Person/)
+
 On game start, the user will press a key.
 The game will then...
 
